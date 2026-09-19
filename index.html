@@ -1,9 +1,63 @@
 <!doctype html>
-<html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#f5efe3"><meta name="description" content="查看光遇愛麗絲咖啡廳每天的燭光位置，依遊戲換日自動更新。"><title>愛麗絲咖啡廳 · 每日燭光</title>
-<link rel="stylesheet" href="assets/style.css"></head><body><header><div class="eyebrow">SKY · ALICE'S WONDERLAND CAFE</div><h1>愛麗絲咖啡廳 · 每日燭光</h1><p>今天的光，藏在哪裡？點選地圖編號，找到每天的 12 處燭光。</p>
-<div class="toolbar"><button id="prev" aria-label="前一天">←</button><label for="date">遊戲日期</label><input type="date" id="date" min="2025-01-01" max="2099-12-31"><button id="next" aria-label="後一天">→</button><button id="today">回到今天</button><span id="mode" role="status" aria-live="polite"></span></div><div class="clock" id="clock" role="timer"></div><div class="legend"><span><i class="dot on"></i>當日有燭光</span><span><i class="dot"></i>當日沒有燭光</span></div></header>
-<noscript>請啟用 JavaScript，以查看日期與當日燭光位置。</noscript><main><div class="map" id="map"><img src="assets/cafe-map.jpg" alt="愛麗絲咖啡廳地圖，由 @sky_solsuga 繪製，附每日燭光位置標記" width="2480" height="3508" style="height:auto"></div><aside><h2 id="list-title">當日燭光 · 12 處</h2><div id="detail" aria-live="polite">點選編號查看地點。</div><div id="locations" class="locations"></div></aside></main>
-<footer><p>依美國太平洋時間午夜換日，自動調整夏令時間。台灣時間為夏季 15:00、冬季 16:00。日期與倒數使用裝置時間。</p><p>地圖：@sky_solsuga（2025-01-05）／<a href="https://sky-children-of-the-light.fandom.com/wiki/Map:Alice%27s_Wonderland_Cafe" target="_blank" rel="noreferrer">Sky Wiki 原圖與授權資訊</a>。本頁加上編號與每日顏色標示；原圖的活動票券圖示不代表目前活動。</p><p>非官方玩家工具。地點可能隨遊戲更新調整。</p></footer>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#f5efe3">
+<meta name="description" content="查看光遇愛麗絲咖啡廳每天的燭光位置，依遊戲換日自動更新。">
+<title>愛麗絲咖啡廳 · 每日燭光</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header>
+<div class="eyebrow">SKY · ALICE'S WONDERLAND CAFE</div>
+<h1>愛麗絲咖啡廳 · 每日燭光</h1>
+<p>今天的光，藏在哪裡？點選地圖編號，找到每天的 12 處燭光。</p>
+<div class="toolbar">
+<button id="prev" aria-label="前一天">←</button>
+<label for="date">遊戲日期</label>
+<input type="date" id="date" min="2025-01-01" max="2099-12-31">
+<button id="next" aria-label="後一天">→</button>
+<button id="today">回到今天</button>
+<span id="mode" role="status" aria-live="polite">
+</span>
+</div>
+<div class="clock" id="clock" role="timer">
+</div>
+<div class="legend">
+<span>
+<i class="dot on">
+</i>當日有燭光</span>
+<span>
+<i class="dot">
+</i>當日沒有燭光</span>
+</div>
+</header>
+<noscript>請啟用 JavaScript，以查看日期與當日燭光位置。</noscript>
+<main>
+<section class="map-section" aria-label="燭光地圖">
+<div class="map-tools">
+<button id="zoom" type="button" aria-pressed="false">放大地圖</button>
+<span id="map-hint">點選編號查看地點</span>
+</div>
+<div class="map-viewport" id="map-viewport" tabindex="0" aria-label="地圖，可在放大後捲動">
+<div class="map" id="map">
+<img src="assets/cafe-map.jpg" alt="愛麗絲咖啡廳地圖，由 @sky_solsuga 繪製，附每日燭光位置標記" width="2480" height="3508" style="height:auto">
+</div>
+</div>
+</section>
+<aside>
+<h2 id="list-title">當日燭光 · 12 處</h2>
+<div id="detail" aria-live="polite">點選編號查看地點。</div>
+<div id="locations" class="locations">
+</div>
+</aside>
+</main>
+<footer>
+<p>依美國太平洋時間午夜換日，自動調整夏令時間。台灣時間為夏季 15:00、冬季 16:00。日期與倒數使用裝置時間。</p>
+<p>地圖：@sky_solsuga（2025-01-05）／<a href="https://sky-children-of-the-light.fandom.com/wiki/Map:Alice%27s_Wonderland_Cafe" target="_blank" rel="noreferrer">Sky Wiki 原圖與授權資訊</a>。本頁加上編號與每日顏色標示；原圖的活動票券圖示不代表目前活動。</p>
+<p>非官方玩家工具。地點可能隨遊戲更新調整。</p>
+</footer>
 <script type="application/json" id="point-data">
 [
   {
@@ -164,5 +218,9 @@
   }
 ]
 </script>
-<script src="assets/daily-core.js" defer></script>
-<script src="assets/app.js" defer></script></body></html>
+<script src="assets/daily-core.js" defer>
+</script>
+<script src="assets/app.js" defer>
+</script>
+</body>
+</html>
