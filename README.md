@@ -3,8 +3,15 @@
 公開的純靜態網站。直接開啟 `index.html`，或將此 repo 的分支根目錄設為 GitHub Pages 發布來源。
 不需要伺服器、帳號或 API 金鑰。
 
-修改 `src/` 後執行 `python build.py`。`index.html` 是刻意提交的發布成品，不是暫存檔。
-圖片已內嵌，發布成品只有一個 HTML；`.nojekyll` 用於停用 Jekyll。
+不需要 build、npm 或 Python。直接編輯並發布：
+
+- `index.html`：頁面文字、結構與 `point-data` 區段的地點名稱／座標。
+- `assets/style.css`：響應式版面。
+- `assets/app.js`：頁面操作。
+- `assets/daily-core.js`：每日日期與點位計算。
+- `assets/cafe-map.jpg`：地圖圖片。
+
+GitHub Pages 選擇 main 分支的根目錄，保留整個 `assets/` 資料夾。所有資源使用相對路徑，支援專案子路徑。`.nojekyll` 用於停用 Jekyll。
 
 地圖作者：@sky_solsuga（2025-01-05）。底圖保留署名，本站添加編號與每日顏色。
 來源及授權：https://sky-children-of-the-light.fandom.com/wiki/Map:Alice%27s_Wonderland_Cafe
