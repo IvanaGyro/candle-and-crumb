@@ -1,4 +1,4 @@
-# 愛麗絲咖啡廳每日燭光
+# Candle & Crumb
 
 公開的純靜態網站。直接開啟 `index.html`，或將此 repo 的分支根目錄設為 GitHub Pages 發布來源。
 不需要伺服器、帳號或 API 金鑰。
