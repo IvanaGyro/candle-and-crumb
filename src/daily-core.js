@@ -1,3 +1,4 @@
+const locationIds = [16, 20, 19, 14, 18, 26, 12, 7, 2, 25, 15, 4, 21, 23, 9, 3, 24, 22, 8, 5, 10, 17, 6, 1, 13, 11];
 const pacificDate = new Intl.DateTimeFormat('en-US', {timeZone:'America/Los_Angeles',year:'numeric',month:'2-digit',day:'2-digit'});
 function gameDate(now = new Date()) {
   const p = Object.fromEntries(pacificDate.formatToParts(now).map(p=>[p.type,p.value]));
@@ -23,6 +24,6 @@ function selectedForDate(date) {
     result.add(Number((permute((permute(counter)+offset)&mask)^0x5bf03635n)%26n)+1);
     counter=(counter+1n)&mask;
   }
-  return [...result];
+  return [...result].map(id=>locationIds[id-1]);
 }
 if(typeof module!=='undefined')module.exports={gameDate,nextReset,selectedForDate};
